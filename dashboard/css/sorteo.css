@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.contenido{
+    margin: 3px;
+}
+
+.caja{
+    display: table-cell;
+    padding: 10px;
+}
+.caja:nth-child(1) h1{
+    background: #069;
+    text-align: center;
+    color: white;
+    margin-bottom: 15px;
+}
+.caja:nth-child(2) h1{
+    background: #059;
+    text-align: center;
+    color: white;
+    margin-bottom: 15px;
+}

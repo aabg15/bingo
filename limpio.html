@@ -1,0 +1,175 @@
+<?php
+session_start();
+
+if ($_SESSION["s_usuario"] === null) {
+    header("Location: ../index.php");
+}
+
+?>
+
+<?php
+include_once '../bd/conexion.php';
+
+$dni = $_SESSION["s_usuario"];
+$objeto = new Conexion();
+$conexion = $objeto->Conectar();
+
+//$consulta = "SELECT * FROM sorteo where dni=" . $dni;
+$consulta = "SELECT * FROM sorteo";
+
+//$resultado = $conexion->prepare($consulta);
+$resultado = $conexion->prepare($consulta);
+
+//$resultado->execute();
+$resultado->execute();
+
+$data = $resultado->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($data as $datx) {
+    $sorteo = $datx['nombre'];
+    $fecha_inicio = $datx['fecha_inicio'];
+    $fecha_fin = $datx['fecha_fin'];
+}
+
+$consultax = "SELECT * FROM cliente where dni=" . $dni;
+$resultadox = $conexion->prepare($consultax);
+$resultadox->execute();
+$datax = $resultadox->fetchAll(PDO::FETCH_ASSOC);
+foreach ($datax as $datp) {
+
+    $nombre = $datp['nombre'];
+    $apellido = $datp['apellidos'];
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugada enviada </title>
+
+    <!--     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+ -->
+    <link rel="stylesheet" href="../plantilla-loticaja.css">
+    <script type="text/javascript" src="../dashboard/control_jugada.js"></script>
+
+    <!--     <link rel="stylesheet" href="plugins/sweetalert2/sweetalert2.min.css">
+ -->
+    <!--     <link rel="stylesheet" type="text/css" href="fuentes/iconic/css/material-design-iconic-font.min.css">
+ -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <header class="interior">
+            <div class="container">
+                <div class="logosullana">
+                    <img src="../dashboard/img/sullana.png">
+                </div>
+
+            </div>
+        </header>
+        <br>
+
+
+        <div id="usuario">
+            <center>
+                <label id="formato-titulo"><?php echo $nombre . ' ' . $apellido; ?> </label>
+
+            </center>
+
+        </div>
+
+        <div id="formato-titulo">
+            <center>
+                <p style="color:#ff8000;">Tus jugadas ha sido ingresada con exito!</p>
+            </center>
+        </div>
+        <br>
+
+        <div id="mis jugadas">
+
+            <table class="table table-bordered">
+                <tr>
+                    <th> # de Jugadas </th>
+                    <th> Fecha</th>
+                    <th> Jugadas</th>
+                </tr>
+                <?php
+
+                //require '../conector/conexion.php';
+                require('../bd/config.php');
+
+                $sqlData = "SELECT * FROM `jugada` where id_cliente='" . $dni . "';";
+                $sql = mysqli_query($con, $sqlData);
+
+
+                //$sql = mysql_query("SELECT * FROM usuario ORDER BY ID_usuario DESC");
+                $i = 0;
+
+                $row_cnt = mysqli_num_rows($sql);
+                if ($row_cnt > 0) {
+
+                    while ($row = mysqli_fetch_assoc($sql)) {
+                        $i++;
+                        $fecha = $row['fecha'];
+                        $letras = $row['letras'];
+                ?>
+                        <tr>
+                            <td> <?php echo $i; ?></td>
+                            <td> <?php echo $fecha; ?></td>
+                            <td> <?php echo $letras; ?></td>
+
+                        </tr>
+                    <?php
+                    }
+                } else {
+                    //No hay registros
+                    ?>
+                  
+
+
+                <?php
+                //echo 'no hay jugadas';
+                }
+                ?>
+
+            </table>
+        </div>
+
+        <br>
+
+        <div id="formato-titulo">
+            <center>
+                <p style="color:black;">Ahora prueba suerte y participa de uno de los sorteos diarios</p>
+            </center>
+        </div>
+
+
+    </div>
+
+    <br>
+
+    <div id='botonNew'>
+        <div class="container-login-form-btn">
+            <div class="wrap-login-form-btn">
+                <div class="login-form-bgbtn"></div>
+                <button onclick="window.location.href='juego_diario.php'" type=submit id="btn_reg_sorteo" name="btn_reg_sorteo" class="btn btn-success btn-md" style="background-color: #ff8000;">Jugar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+    <br><br><br>
+    <?php require_once "vistas/parte_inferior.php" ?>

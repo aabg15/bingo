@@ -1,0 +1,245 @@
+.border_botones{
+
+    border: 5px solid #ff8000;
+/*     margin: 2em;
+     max-width: 200px;
+    min-width: 300px;
+    justify-content: center;*/
+
+}
+
+
+/* #f2cc15 naranja
+#f3d016 amarillo
+#df040b rojo 
+#ffffff blanco
+ */
+.boton_personalizado{
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: black;
+    background-color: #fff;
+    border-radius: 6px;
+    border: 2px solid #f3d016;
+  }
+  .boton_personalizado:hover{
+    color: #df040b;
+    background-color: #f2cc15;
+  }
+
+#formato-titulo{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+
+
+/* ----------------------------------- */
+
+
+
+
+@font-face {
+
+    font-family: BreePeru_Regular;
+    src: local(BreePeru_Regular), url('fuentes/fuentes/BreePeru_Regular.otf');
+  }
+  
+  @font-face {
+  
+    font-family: BreePeru_Light;
+    src: local(BreePeru_Light), url('fuentes/fuentes/BreePeru_Light.otf');
+  
+  }
+  
+  @font-face {
+  
+    font-family: BreePeru_BoldOblique;
+    src: local(BreePeru_BoldOblique), url('fuentes/fuentes/BreePeru_BoldOblique.otf');
+  
+  }
+  
+  @font-face {
+  
+    font-family: BreePeru_LightOblique;
+    src: local(BreePeru_LightOblique), url('fuentes/fuentes/BreePeru_LightOblique.otf');
+  
+  }
+  
+  @font-face {
+  
+    font-family: BreePeru_RegularOblique;
+    src: local(BreePeru_RegularOblique), url('fuentes/fuentes/BreePeru_RegularOblique.otf');
+  
+  }
+  
+  @font-face {
+  
+  
+    font-family: BreePeru_Bold;
+    src: local(“BreePeru_Bold”), url('fuentes/fuentes/BreePeru_Bold.otf');
+  
+  }
+  
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    font-family: Poppins-Regular, sans-serif;
+}
+
+
+input {
+    outline: none;
+    border: none;
+}
+
+button {
+    outline: none !important;
+    border: none;
+    background: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/*-- contenedor del Login--*/
+
+/* background: linear-gradient(to right, #f2cc15, #df040b);
+ */
+
+
+/*------------------------------------------------------------------
+
+
+
+
+/*---------------------------------------------*/
+.focus-efecto {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.focus-efecto::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 4px;
+    /*ancho de la linea que hace el efecto de barra de progeso en el input al hacer foco*/
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+
+    background: #6a7dfe;
+    background: -webkit-linear-gradient(left, #f3d016, #df040b);
+    background: -o-linear-gradient(left, #f3d016, #df040b);
+    background: -moz-linear-gradient(left, #f3d016, #df040b);
+    background: linear-gradient(left, #f3d016, #df040b);
+}
+
+/* #f2cc15 naranja
+  #f3d016 amarillo
+  #df040b rojo */
+
+.focus-efecto::after {
+    font-family: Poppins-Regular;
+    font-size: 15px;
+    color: #999999;
+    line-height: 1.2;
+
+    content: attr(data-placeholder);
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 16px;
+    left: 0px;
+    padding-left: 5px;
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+
+
+
+
+
+/*---------------------------------------------*/
+
+
+.container {
+
+    max-width: 1000px;
+    margin: 0 auto;
+    
+}
+
+.header {
+
+    height: 100px;
+    padding-top: 10px;
+    
+    
+}
+
+.header .logosullana {
+
+
+    float: left;
+    padding-left: 15px;
+}
+
+header .logosullana img {
+
+    width: 100%;
+    max-width: 250px;
+}
+
+.interior {
+    background: url(../img/2021/footer.png) repeat;
+    background-size: cover;
+    background-color: #ff8000;
+    
+}
+
+/*------------------------------------------------------------------
+  [ Button ]*/
+.container-login-form-btn {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+
+
+/* #f2cc15 naranja
+  #f3d016 amarillo
+  #df040b rojo 
+  #ffffff blanco
+  */

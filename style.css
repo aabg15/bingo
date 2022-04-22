@@ -1,0 +1,306 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin&display=swap'); */
+
+
+@font-face {
+
+    font-family: BreePeru_Regular;
+    src: local(BreePeru_Regular), url('fuentes/fuentes/BreePeru_Regular.otf');
+}
+
+@font-face {
+
+    font-family: BreePeru_Light;
+    src: local(BreePeru_Light), url('fuentes/fuentes/BreePeru_Light.otf');
+
+}
+
+@font-face {
+
+    font-family: BreePeru_BoldOblique;
+    src: local(BreePeru_BoldOblique), url('fuentes/fuentes/BreePeru_BoldOblique.otf');
+
+}
+
+@font-face {
+
+    font-family: BreePeru_LightOblique;
+    src: local(BreePeru_LightOblique), url('fuentes/fuentes/BreePeru_LightOblique.otf');
+
+}
+
+@font-face {
+
+    font-family: BreePeru_RegularOblique;
+    src: local(BreePeru_RegularOblique), url('fuentes/fuentes/BreePeru_RegularOblique.otf');
+
+}
+
+@font-face {
+
+
+    font-family: BreePeru_Bold;
+    src: local(“BreePeru_Bold”), url('fuentes/fuentes/BreePeru_Bold.otf');
+
+}
+
+
+
+
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+
+.cartel {
+    margin-left: 24px;
+}
+
+.marco {
+    position: absolute;
+    width: 300px;
+    height: 200px;
+}
+
+.texto {
+    border-radius: 10px;
+    background-color: white;
+    border: 2.5px solid #df040b;
+}
+
+.texto p {
+    margin: 1em;
+}
+
+.marco2 {
+    border-radius: 10px;
+    background-color: #df040b;
+    transform: rotate(-4deg);
+}
+
+.marco1 {
+    border-radius: 10px;
+    background-color: #f2cc15;
+    transform: rotate(4deg);
+}
+
+
+.texto:after,
+.texto:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.texto:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: #ffffff;
+    border-width: 30px;
+    margin-top: -30px;
+}
+
+.texto:before {
+    border-color: rgba(223, 4, 11, 0);
+    border-right-color: #df040b;
+    border-width: 33px;
+    margin-top: -33px;
+}
+
+#contenedor,
+#seleccionadaLetra,
+#nombreUsuario {
+    font-family: BreePeru_Bold;
+}
+#contenedor_datos{
+
+    font-family: BreePeru_Bold;
+}
+#botonBorrar {
+    font-family: BreePeru_Bold;
+
+}
+
+.ok {
+    font-family: BreePeru_Bold;
+
+}
+
+#img_nav {
+    margin-left: 300px
+}
+
+#btn_nav {
+    width: 20%;
+    border-radius: 46px;
+    margin-right: 300px;
+    background: linear-gradient(to right, #f2cc15, #df040b);
+    border: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+#btn_nav2 {
+    width: 20%;
+    border-radius: 46px;
+    margin-right: 200px;
+    background: linear-gradient(to right, #f2cc15, #df040b);
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    inline-size: auto;
+
+}
+
+#contenedo {
+    font-family: BreePeru_Bold;
+    font-weight: normal;
+    font-size: 100%;
+    color: #1b262c;
+
+    margin: 0;
+    background-color: #0f4c75;
+}
+
+#rocnt {
+
+    padding-top: 80px;
+
+}
+
+@media (max-width: 500px) {
+    #img_nav {
+        margin-left: 60px;
+    }
+
+    #btn_nav {
+        margin-left: 120px;
+    }
+
+    #btn_nav2 {
+        position: relative;
+    }
+
+    #rocnt {
+
+        padding-top: 0px;
+
+    }
+
+    #colls {
+        display: none;
+    }
+
+    .btn_juega {
+        margin-top: -17px;
+    }
+    #fotoSenalando{
+        display: none;
+    }
+    #iconousuario{
+        align-self: auto;
+    }
+}
+
+#div2 {
+    flex: 1;
+    background-image: url('loti_caja_2_Mesa_de_trabajo_1.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.btn-bg {
+    background: linear-gradient(to right, #f2cc15, #df040b) !important;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+/* form-group.form-control {
+    background: transparent;
+    border: 10px solid #4683af;
+    width: 100%;
+    padding: 0.3ex 2ex;
+    border-radius: 0.25ex;
+
+} */
+
+
+
+
+
+#div3 {
+    flex: 1;
+    /*     background-image: url('loticaja_1_Mesa_de_trabajo_1.png'); */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#titutloPrin {
+    font-family: BreePeru_Bold;
+    font-size: 85px;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: BreePeru_Bold;
+    font-weight: 300;
+    color: #333;
+}
+
+h1 {
+    font-size: 40px;
+    font-family: BreePeru_Bold;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    font-family: BreePeru_Bold;
+    color: #ffffff
+}
+
+h3 {
+    color: #ffffff;
+    font-weight: 400;
+    font-family: BreePeru_Bold;
+}
+
+#tituloParaFoto,#textoFooter {
+    color: black;
+    font-weight: 400;
+    font-family: BreePeru_Bold;
+}
+
+#tituloprimero {
+    color: black;
+    font-weight: 400;
+    font-family: BreePeru_Bold;
+    text-align: center;
+}
+
+#comoParticipar {
+    color: black;
+    text-align: center;
+    font-family: BreePeru_Bold;
+    font-size: 40px;
+
+}
